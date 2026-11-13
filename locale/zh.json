@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Tushare 行情研究（含技能）",
+    "description": "给所有会话安装 tushare-data 数据研究技能（龙虎榜/资金流/财报/估值/板块/宏观，自然语言直查）。用 /tushare-token <token> 命令或对话设置 token，开箱即用，不依赖环境变量。"
+  }
+}

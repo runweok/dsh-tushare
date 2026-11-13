@@ -1,0 +1,46 @@
+{
+  "name": "dsh-tushare",
+  "version": "2.3.1",
+  "description": "Ships the tushare-data research skill to every DSH session; set your Tushare token in the Plugins settings tab, or via /tushare-token.",
+  "type": "module",
+  "license": "MIT",
+  "author": "runweok",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/runweok/dsh-tushare.git"
+  },
+  "homepage": "https://github.com/runweok/dsh-tushare#readme",
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "skill"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-plugin-manager",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Tushare research (with skill)",
+    "description": "Installs the tushare-data research skill into every session (LHB, moneyflow, financials, valuation, sectors, macro, natural-language queries). Set your token with /tushare-token <token> or just ask the agent; works out of the box."
+  }
+}
