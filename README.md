@@ -11,6 +11,12 @@ DeepSeek Harness（DSH）插件：**给所有会话安装 tushare-data 数据研
    - 或直接对 AI 说「**把 tushare token 设为 xxx**」（调用 `tushare_set_token` 工具）
    - token 自动写入技能目录（0600 权限），技能脚本开箱即用；清除则回退 `~/.tushare/token` 或环境变量 `TUSHARE_TOKEN`
 
+## 界面预览
+
+插件详情页内置 Tushare Token 设置面板（状态指示 / 保存 / 清除）：
+
+![插件详情页的 Tushare Token 设置面板](https://raw.githubusercontent.com/runweok/dsh-tushare/main/docs/screenshot-token-settings.png)
+
 ## 安装（三种方式任选）
 
 1. **npm 包（推荐）**：对本机 DSH 里的 AI 说：**用 plugin_manager 的 install_bundle 安装 dsh-tushare**（target 给 `dsh-tushare@<版本号>`）
