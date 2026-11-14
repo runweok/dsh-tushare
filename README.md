@@ -43,7 +43,7 @@ DeepSeek Harness（DSH）插件：**给所有会话安装 tushare-data 数据研
 - 空结果会区分非交易日/未上市/无权限，不会把空表说成「接口坏了」
 - 导出 CSV/Parquet 附元信息（接口名、参数、拉取时间、行数、失败分段），可直接进回测
 - **229 个接口字段速查**（`references/数据接口.md`）：股票参考、债券、两融转融通、ETF/基金、宏观、行业经济、大模型语料全分类
-- **内置取数脚本**：`scripts/stock_data_demo.py` / `scripts/fund_data_demo.py`，`pip install tushare pandas` 即可跑通
+- **速查 CLI `scripts/tsq.py`（首选）**：`lhb`（龙虎榜+营业部明细）/ `dv`（估值交叉）/ `mf`（大单结构，联动日线补涨跌幅）/ `fina`（财务复核）/ `daily` / `smoke` 六个子命令——token 三路自动解析、统一 markdown 紧凑表（单位换算为亿）、已知接口坑全部内置规避；另有 `stock_data_demo.py` / `fund_data_demo.py` 演示脚本
 
 ### 2. Token 管理（三条通道）
    - **设置页输入框（推荐）**：**设置 → 插件 → Tushare** 页签，粘贴 token 点保存（插件自带该页签）

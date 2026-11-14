@@ -1,6 +1,6 @@
 {
   "name": "dsh-tushare",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Ships the tushare-data research skill to every DSH session; set your Tushare token in the Plugins settings tab, or via /tushare-token.",
   "type": "module",
   "license": "MIT",

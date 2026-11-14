@@ -198,7 +198,7 @@ export TUSHARE_TOKEN=your_token
 
 - `python3`（3.7+）、`tushare` 与 `pandas` 通常已具备；开查前仍按上方清单实测确认，缺则 `pip install tushare pandas`，不要假定已安装
 - token 优先读 `~/.dsh/skills/tushare-data/token`（由 dsh-tushare 插件设置页写入，权限 0600）；兼容 `~/.tushare/token` 与环境变量 `TUSHARE_TOKEN`（脚本按此链路自动读取）
-- 全部数据接口的字段/参数速查：`references/数据接口.md`；`scripts/` 下有股票与基金取数演示脚本
+- 全部数据接口的字段/参数速查：`references/数据接口.md`；**首选速查 CLI `scripts/tsq.py`**：`python3 tsq.py lhb <YYYYMMDD> | dv <code> | mf <code> | fina <code> | daily <code> | smoke`，token 三路自动解析、统一 markdown 表输出（单位换算为亿）、已知接口坑内置规避；另有 `scripts/` 下股票与基金取数演示脚本
 
 ***
 
@@ -474,7 +474,7 @@ export TUSHARE_TOKEN=your_token
 
 ## 已知接口坑（持续回写）
 
-当前 token 积分档实测出的接口行为差异。**取数前先看本节，避免现场试错；每踩一个新坑，解决后立即回写本节（带日期）**，别让下个会话重踩。
+当前 token 积分档实测出的接口行为差异。**取数前先看本节，避免现场试错；每踩一个新坑，解决后立即回写本节（带日期）**，别让下个会话重踩。下述坑在 `scripts/tsq.py` 中已内置规避——能用 tsq.py 的场景优先用 tsq.py。
 
 - 2026-11-14 `top_list`：当前积分档**必传 `trade_date`**——`ts_code`+起止日期区间直接报「必填参数缺失」。异动日逐日查，不要按区间查。
 - 2026-11-14 `moneyflow`：返回列里**没有 `pct_change`**——涨跌幅需联动 `daily` 取，格式化时别引用不存在的列。
