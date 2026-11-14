@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Tushare research plugins",
+    "zh": "Tushare 行情研究"
+  },
+  "plugins": [
+    {
+      "name": "dsh-tushare",
+      "title": {
+        "en": "Tushare research (with skill)",
+        "zh": "Tushare 行情研究（含技能）"
+      },
+      "description": {
+        "en": "Installs the tushare-data research skill into every session (LHB, moneyflow, financials, valuation, sectors, macro, natural-language queries). Set your token in the Plugins settings tab or via /tushare-token; free vs paid tier behavior documented.",
+        "zh": "给所有会话安装 tushare-data 数据研究技能（龙虎榜/资金流/财报/估值/板块/宏观，自然语言直查）。设置页或 /tushare-token 配置 token，免费/付费积分档位行为已写明。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTNhNWYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcng9IjE0IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxwYXRoIGQ9Ik0xNiA0MGgzMiIgc3Ryb2tlPSIjMzM0ZTZlIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iMjAiIHkxPSIxOCIgeDI9IjIwIiB5Mj0iMzYiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHJlY3QgeD0iMTYiIHk9IjI0IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZTJlOGYwIi8+CiAgPGxpbmUgeDE9IjMyIiB5MT0iMjIiIHgyPSIzMiIgeTI9IjQwIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMiIvPgogIDxyZWN0IHg9IjI4IiB5PSIyOCIgd2lkdGg9IjgiIGhlaWdodD0iOSIgZmlsbD0iIzM4YmRmOCIvPgogIDxsaW5lIHgxPSI0NCIgeTE9IjE2IiB4Mj0iNDQiIHkyPSIzNCIgc3Ryb2tlPSIjZjQzZjVlIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cmVjdCB4PSI0MCIgeT0iMjAiIHdpZHRoPSI4IiBoZWlnaHQ9IjkiIGZpbGw9IiNmNDNmNWUiLz4KPC9zdmc+Cg==",
+      "author": "runweok",
+      "homepage": "https://github.com/runweok/dsh-tushare#readme",
+      "repository": {
+        "url": "https://github.com/runweok/dsh-tushare"
+      },
+      "metadata": {
+        "keywords": [
+          "tushare",
+          "A股",
+          "金融数据",
+          "行情",
+          "龙虎榜",
+          "资金流",
+          "估值",
+          "宏观",
+          "DSH"
+        ]
+      },
+      "versions": [
+        {
+          "version": "2.3.4",
+          "publishTimestamp": 1794616665,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/runweok/dsh-tushare",
+            "commit": "4ca8d2e10dd682fc803a1d05ed694fcc2d5461ee"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+          }
+        }
+      ]
+    }
+  ]
+}
