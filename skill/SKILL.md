@@ -200,6 +200,21 @@ export TUSHARE_TOKEN=your_token
 - token 优先读 `~/.dsh/skills/tushare-data/token`（由 dsh-tushare 插件设置页写入，权限 0600）；兼容 `~/.tushare/token` 与环境变量 `TUSHARE_TOKEN`（脚本按此链路自动读取）
 - 全部数据接口的字段/参数速查：`references/数据接口.md`；**首选速查 CLI `scripts/tsq.py`**：`python3 tsq.py lhb <YYYYMMDD> | dv <code> | mf <code> | fina <code> | daily <code> | smoke`，token 三路自动解析、统一 markdown 表输出（单位换算为亿）、已知接口坑内置规避；另有 `scripts/` 下股票与基金取数演示脚本
 
+### 积分/权限门槛速查（2026-11 官方口径）
+
+积分是分级门槛（不消耗），频次随档位提高；**免费档基本只能跑日线**，调接口前先对档位：
+
+| 档位 | 频次 | 解锁 |
+|---|---|---|
+| 免费 120 分 | 50 次/分、8000 次/天 | **仅非复权日线 `daily`**（shibor_lpr/libor/hibor 也是 120 档） |
+| 2000 分 | 200 次/分、10 万次/个 API | `daily_basic`、`top_list`/`top_inst`、`moneyflow`、`income`/`balancesheet`/`cashflow`、`fina_indicator`、`forecast`/`express`、`disclosure_date`、`weekly`/`monthly`/`pro_bar`、指数与申万、基金、可转债、`shibor` 等 |
+| 5000 分 | 500 次/分、常规无上限 | 同上，频次更高 |
+| 10000+ 分 | 500 次/分 | 特色数据：盈利预测、每日筹码和胜率、筹码分布、券商月度金股 |
+
+**独立权限（与积分无关，需单独购买）**：分钟数据（历史 2000 元/年）、美股日线（2000 元/年）、港股（1000 元起）、新闻（1000 元/年）、公告（1000 元/年）、互动易/e 互动（500 元/年）、券商研报库（500 元/年）等。**涉及这些意图（分钟线、公告原文、新闻、研报）而 token 无对应权限时，提前告知用户，不要硬调。**
+
+积分获取：注册 100 分 + 改资料 20 分 = 120（免费档下限）；购买 1 元 = 10 积分；权限一年有效。接口最低分值总表：`https://tushare.pro/document/1?doc_id=108`；频次表：`https://tushare.pro/document/1?doc_id=290`。
+
 ***
 
 ## Intent taxonomy
