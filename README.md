@@ -1,6 +1,19 @@
 # dsh-tushare · Tushare 行情研究（含技能）
 
+[![npm version](https://img.shields.io/npm/v/dsh-tushare)](https://www.npmjs.com/package/dsh-tushare)
+[![license](https://img.shields.io/npm/l/dsh-tushare)](LICENSE)
+![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.2-24B8C6)
+![python](https://img.shields.io/badge/python-3.7%2B-3776AB)
+
 DeepSeek Harness（DSH）插件：**给所有会话安装 tushare-data 数据研究技能**，并在插件设置里提供 Tushare Token 输入框——填一次 token，所有会话开箱即用。从龙虎榜、北向资金、打板情绪到宏观跨市场，中文自然语言直接出研究结论和数据文件。
+
+> **English**: DeepSeek Harness plugin that ships the tushare-data research skill to every session — LHB, moneyflow, financials, valuation, sectors, macro, natural-language in, research tables out. Configure your token in the plugin settings panel, `/tushare-token`, or just ask the agent. Note: the free Tushare tier covers daily bars only; this plugin's core data (LHB / moneyflow / valuation / financials) needs the 2,000-point tier (≈¥200/year) — see [积分与权限](#积分与权限免费--付费的区别).
+
+## 要求（先看这里）
+
+- DeepSeek Harness **≥ 0.2.1-rc.2**
+- `python3`（3.7+），且 `pip install tushare pandas`
+- Tushare token：[tushare.pro 注册](https://tushare.pro)后获取；**免费档只有日线可用**，插件主打的龙虎榜/资金流/估值/财务需要 2000 积分档——详见[积分与权限](#积分与权限免费--付费的区别)
 
 ## 功能
 
@@ -106,6 +119,23 @@ DeepSeek Harness（DSH）插件：**给所有会话安装 tushare-data 数据研
 - 技能指令内置权限前置检查：高权限接口调用前主动提示积分限制，避免跑失败才暴露
 - `tsq.py` 速查 CLI：权限/积分不足时以**退出码 3** + 人话提示报告，参数错误退出码 2
 - 档位相关的行为差异（如龙虎榜必传 `trade_date`）沉淀在 SKILL.md「已知接口坑」节，踩过的坑不会重踩
+
+## FAQ
+
+**Q: token 从哪里来？**
+A: [tushare.pro 注册](https://tushare.pro)后，在「个人主页」复制 token（官方说明 [doc_id=39](https://tushare.pro/document/1?doc_id=39)），然后三条通道任选一条设置。
+
+**Q: 免费账号能用什么？**
+A: 只有非复权日线 `daily`（120 分档）。龙虎榜、资金流、估值、财务全家桶都要 2000 分档（个人 200 元/年，1 元 = 10 积分）。
+
+**Q: 报「权限/积分不足」怎么办？**
+A: `tsq.py` 退出码 3 即此类错误；要么升级积分档，要么换用免费可用的接口。技能会在调用高权限接口前主动提示。
+
+**Q: 更新/卸载插件会丢 token 吗？**
+A: 不会。token 存在 `~/.dsh/skills/tushare-data/token`（0600 权限），插件重装、升级都不碰它；只有你主动「清除」才会删。
+
+**Q: Windows 能用吗？**
+A: 能。路径全部走 `os.homedir()` 解析，无 macOS 专属依赖。
 
 ## 设计说明
 

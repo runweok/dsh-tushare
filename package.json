@@ -7,7 +7,7 @@
   "author": "runweok",
   "repository": {
     "type": "git",
-    "url": "https://github.com/runweok/dsh-tushare.git"
+    "url": "git+https://github.com/runweok/dsh-tushare.git"
   },
   "homepage": "https://github.com/runweok/dsh-tushare#readme",
   "engines": {
@@ -27,6 +27,7 @@
     "locale/*.json",
     "icon.svg",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE",
     "skill"
   ],
